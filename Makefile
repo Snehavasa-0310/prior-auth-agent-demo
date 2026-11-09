@@ -2,6 +2,8 @@
 
 PYTHON ?= python3
 VENV ?= .venv
+PORT ?= 8000
+UI_PORT ?= 8501
 ACTIVATE = . $(VENV)/bin/activate && export PYTHONPATH=.
 
 help:
@@ -9,9 +11,10 @@ help:
 	@echo "  make setup       Create virtualenv and install dependencies"
 	@echo "  make data        Generate policies and synthetic clinical cases"
 	@echo "  make ingest      Warm policy index and criteria cache"
-	@echo "  make run-api     Launch FastAPI REST backend (port 8000)"
-	@echo "  make run-ui      Launch Streamlit Reviewer Workspace (port 8501)"
+	@echo "  make run-api     Launch FastAPI REST backend (port 8000 or PORT=xxxx)"
+	@echo "  make run-ui      Launch Streamlit Reviewer Workspace (port 8501 or UI_PORT=xxxx)"
 	@echo "  make run         Run both API and UI locally"
+	@echo "  make demo        Run terminal interactive walkthrough"
 	@echo "  make test        Execute pytest test suite"
 	@echo "  make lint        Run ruff and mypy static analysis"
 	@echo "  make eval        Execute full evaluation suite & ablations across 104 cases"
@@ -31,14 +34,14 @@ ingest: data
 	$(ACTIVATE) && python -c 'from src.policy.loader import load_and_index_policies; from pathlib import Path; load_and_index_policies(Path("data/policies")); print("Policy indexing complete.")'
 
 run-api:
-	$(ACTIVATE) && uvicorn src.api.main:app --host 0.0.0.0 --port 8000 --reload
+	$(ACTIVATE) && uvicorn src.api.main:app --host 0.0.0.0 --port $(PORT) --reload
 
 run-ui:
-	$(ACTIVATE) && streamlit run src/ui/app.py --server.port 8501
+	$(ACTIVATE) && streamlit run src/ui/app.py --server.port $(UI_PORT)
 
 run:
 	@echo "Starting FastAPI and Streamlit in parallel..."
-	$(ACTIVATE) && (uvicorn src.api.main:app --host 0.0.0.0 --port 8000 & streamlit run src/ui/app.py --server.port 8501)
+	$(ACTIVATE) && (uvicorn src.api.main:app --host 0.0.0.0 --port $(PORT) & streamlit run src/ui/app.py --server.port $(UI_PORT))
 
 test:
 	$(ACTIVATE) && pytest tests/ -v
