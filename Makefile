@@ -34,9 +34,11 @@ ingest: data
 	$(ACTIVATE) && python -c 'from src.policy.loader import load_and_index_policies; from pathlib import Path; load_and_index_policies(Path("data/policies")); print("Policy indexing complete.")'
 
 run-api:
+	-lsof -ti :$(PORT) | xargs kill -9 2>/dev/null || true
 	$(ACTIVATE) && uvicorn src.api.main:app --host 0.0.0.0 --port $(PORT) --reload
 
 run-ui:
+	-lsof -ti :$(UI_PORT) | xargs kill -9 2>/dev/null || true
 	$(ACTIVATE) && streamlit run src/ui/app.py --server.port $(UI_PORT)
 
 run:
