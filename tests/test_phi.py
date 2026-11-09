@@ -39,3 +39,4 @@ def test_phi_guard_redaction():
     assert "555-839-2001" not in redacted
     assert "test@health.org" not in redacted
     assert "[REDACTED_PHONE]" in redacted or "[REDACTED_EMAIL]" in redacted
+

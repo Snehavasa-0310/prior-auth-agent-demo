@@ -59,3 +59,4 @@ The Prior Auth Copilot functions solely as a **clinical summarizer and reviewer 
 - Status progresses from `SUBMITTED` -> `ANALYZED` -> `UNDER_REVIEW`.
 - The system **never** marks a case `APPROVED` or `REJECTED` autonomously.
 - Final determination requires a licensed medical director or clinical reviewer to log in to the Streamlit Reviewer Workspace, inspect the highlighted evidence citations, edit or approve the draft packet, and provide their clinical sign-off signature.
+

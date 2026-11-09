@@ -100,3 +100,4 @@ def test_hybrid_policy_retrieval_all_procedures():
         assert top_policy_id == expected_policy_id, (
             f"Query '{query}' expected '{expected_policy_id}' but got '{top_policy_id}'"
         )
+

@@ -1,8 +1,8 @@
-.PHONY: setup data ingest run-api run-ui run test lint eval clean docker-up docker-down help
+.PHONY: setup data ingest run-api run-ui run test lint eval demo clean docker-up docker-down help
 
 PYTHON ?= python3
 VENV ?= .venv
-ACTIVATE = . $(VENV)/bin/activate
+ACTIVATE = . $(VENV)/bin/activate && export PYTHONPATH=.
 
 help:
 	@echo "Prior Authorization Copilot Agent - Commands:"
@@ -50,6 +50,9 @@ lint:
 eval:
 	$(ACTIVATE) && python -m eval.runner
 
+demo:
+	$(ACTIVATE) && python scripts/demo_cli.py
+
 docker-up:
 	docker compose up --build -d
 
@@ -59,3 +62,4 @@ docker-down:
 clean:
 	rm -rf .pytest_cache .ruff_cache .mypy_cache prior_auth.db
 	find . -type d -name "__pycache__" -exec rm -rf {} +
+

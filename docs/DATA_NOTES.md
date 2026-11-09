@@ -56,3 +56,4 @@ Every ground-truth `evidence_quote` associated with a `MET` criterion is verifie
 1. **Not a Licensed Medical Device**: This software has not been submitted to the US FDA for clearance as Software as a Medical Device (SaMD) under 21 CFR 860.
 2. **Deterministic Fallback**: In clinical practice, edge cases require medical director clinical judgment. The agent explicitly stops at `NEEDS_MORE_INFO` or routes to a human reviewer.
 3. **Payer Variation**: Payer policies change quarterly. Production deployment requires automated webhook ingestion of CMS MUE/LCD updates and payer policy revision feeds.
+

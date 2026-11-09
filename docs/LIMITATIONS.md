@@ -39,3 +39,4 @@ The repository contains 8 curated coverage policies derived from CMS LCDs/NCDs a
 US healthcare payers update coverage guidelines on monthly and quarterly cycles (e.g. changing HbA1c thresholds, requiring step therapy with biosimilars before originator biologics). 
 
 **Impact**: Production deployment requires automated policy monitoring workers, webhook listeners on CMS MCD updates, and version-controlled criteria registries with automated regression testing before deploying policy updates into clinical production.
+

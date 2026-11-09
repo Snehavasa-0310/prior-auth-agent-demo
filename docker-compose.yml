@@ -1,6 +1,6 @@
 services:
   db:
-    image: postgres:16-alpine
+    image: pgvector/pgvector:pg16
     container_name: prior-auth-db
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-priorauth}
@@ -10,6 +10,7 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./docker/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-priorauth} -d ${POSTGRES_DB:-prior_auth}"]
       interval: 5s
@@ -53,3 +54,4 @@ services:
 
 volumes:
   postgres_data:
+

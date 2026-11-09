@@ -61,3 +61,4 @@ def test_quote_verifier_empty_quote_coerced():
     verified = QuoteVerifier.verify_and_align(raw_eval, note)
     assert verified.status == CriterionStatus.INSUFFICIENT_INFO
     assert verified.is_verified_substring is False
+

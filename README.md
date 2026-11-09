@@ -208,3 +208,4 @@ The Reviewer Workspace enables clinical reviewers to inspect cases without readi
 - [docs/DESIGN_DECISIONS.md](docs/DESIGN_DECISIONS.md) - Technical trade-offs (No LangChain, RRF, QuoteVerifier).
 - [docs/LIMITATIONS.md](docs/LIMITATIONS.md) - Honest weaknesses and production considerations.
 - [eval/results/EVALUATION_REPORT.md](eval/results/EVALUATION_REPORT.md) - Full automated evaluation report.
+
