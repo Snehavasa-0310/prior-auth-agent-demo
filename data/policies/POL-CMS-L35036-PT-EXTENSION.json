@@ -1,0 +1,57 @@
+{
+  "id": "POL-CMS-L35036-PT-EXTENSION",
+  "title": "Outpatient Physical Therapy Extension",
+  "payer": "Medicare (CMS)",
+  "policy_type": "LCD",
+  "policy_number": "LCD L35036",
+  "procedure_name": "Physical Therapy Extension (Therapeutic Exercise)",
+  "cpt_codes": [
+    "97110",
+    "97140",
+    "97530"
+  ],
+  "icd10_codes": [
+    "M25.561",
+    "M54.5",
+    "S83.511A"
+  ],
+  "effective_date": "2023-01-01",
+  "source_url": "https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdid=35036",
+  "summary": "Authorizes extension of outpatient physical therapy services beyond initial 12 visits when documented re-evaluation demonstrates measurable objective functional progress towards specific functional goals and patient requires skilled care rather than maintenance home exercise.",
+  "sections": [
+    {
+      "title": "Medical Necessity Requirements",
+      "content": "Extension of physical therapy (CPT 97110, 97140) beyond initial authorized visits is covered when:\n1. A formal physical therapy re-evaluation is performed within the last 30 days.\n2. Objective measurable progress is documented (e.g. range of motion in degrees, strength grades, validated functional scoring such as Oswestry Disability Index, Lower Extremity Functional Scale).\n3. Realistic, time-specific functional goals remain to be achieved.\n4. The services require the unique skills of a licensed physical therapist and cannot be safely delivered via an independent home exercise program (maintenance therapy is non-covered)."
+    },
+    {
+      "title": "Exclusions",
+      "content": "Repetitive, non-skilled maintenance therapy where patient has plateaued with no documented functional gains over the preceding 30 days."
+    }
+  ],
+  "criteria": [
+    {
+      "id": "CRIT-PT-01",
+      "title": "Recent Physical Therapy Re-Evaluation (<= 30 days)",
+      "criterion_type": "DIAGNOSTIC",
+      "description": "Documented PT re-evaluation or progress report completed within the last 30 days.",
+      "required_evidence": "Date and findings of physical therapy re-evaluation report.",
+      "is_mandatory": true
+    },
+    {
+      "id": "CRIT-PT-02",
+      "title": "Documented Measurable Objective Progress",
+      "criterion_type": "INCLUSION",
+      "description": "Objective data showing measurable functional gains (e.g., ROM degrees, strength 3/5 to 4/5, LEFS/Oswestry percentage improvement) compared to baseline.",
+      "required_evidence": "Baseline vs current objective metrics showing functional improvement.",
+      "is_mandatory": true
+    },
+    {
+      "id": "CRIT-PT-03",
+      "title": "Ongoing Need for Skilled Care vs Maintenance",
+      "criterion_type": "INCLUSION",
+      "description": "Documentation justifying why ongoing skilled therapist intervention is required rather than independent transition to a home exercise program.",
+      "required_evidence": "Therapist clinical rationale specifying complexity of skilled intervention required.",
+      "is_mandatory": true
+    }
+  ]
+}

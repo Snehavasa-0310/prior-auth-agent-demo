@@ -1,0 +1,65 @@
+{
+  "id": "POL-COMM-CG-SURG-05-KNEE-ARTHRO",
+  "title": "Knee Arthroscopy and Meniscectomy",
+  "payer": "Anthem / Commercial Payer",
+  "policy_type": "COMMERCIAL_POLICY",
+  "policy_number": "CG-SURG-05",
+  "procedure_name": "Arthroscopy, knee, surgical; with meniscectomy",
+  "cpt_codes": [
+    "29881",
+    "29880"
+  ],
+  "icd10_codes": [
+    "M23.22",
+    "M23.23",
+    "M23.32",
+    "S83.24"
+  ],
+  "effective_date": "2023-04-01",
+  "source_url": "https://www.anthem.com/dam/medpolicies/abc/active/guidelines/gl_pw_d074312.html",
+  "summary": "Outpatient knee arthroscopy with partial meniscectomy requires confirmed mechanical symptoms (locking, catching), documented physical examination signs (McMurray or joint line tenderness), MRI confirmation of tear, and at least 6-12 weeks of failed conservative therapy in degenerative cases without acute mechanical block.",
+  "sections": [
+    {
+      "title": "Clinical Indications",
+      "content": "Knee arthroscopy with meniscectomy (CPT 29881) is medically necessary when ALL of the following are met:\n1. Subjective symptoms of knee pain accompanied by mechanical symptoms (true locking, catching, or giving way).\n2. Objective physical examination findings including joint line tenderness and positive provocative test (e.g. McMurray test or Thessaly test).\n3. Preoperative MRI demonstrating a tear of the meniscus in an area accessible to repair or resection.\n4. For degenerative tears: Failure of at least 6 weeks of non-operative treatment including physical therapy, NSAIDs, and/or intra-articular steroid injections (not required for acute displaced bucket-handle tear with locked knee)."
+    },
+    {
+      "title": "Contraindications and Exclusions",
+      "content": "Arthroscopy is not covered for isolated osteoarthritis of the knee without identifiable mechanical symptoms or when advanced Kellgren-Lawrence grade IV joint space narrowing is present."
+    }
+  ],
+  "criteria": [
+    {
+      "id": "CRIT-KNEE-01",
+      "title": "Mechanical Symptoms (Locking, Catching, Giving Way)",
+      "criterion_type": "INCLUSION",
+      "description": "Patient reports clear mechanical symptoms such as true joint locking, intermittent catching, or unstable giving way.",
+      "required_evidence": "History of present illness documenting specific mechanical knee symptoms.",
+      "is_mandatory": true
+    },
+    {
+      "id": "CRIT-KNEE-02",
+      "title": "Physical Exam Signs of Meniscal Pathology",
+      "criterion_type": "INCLUSION",
+      "description": "Documented joint line tenderness and positive provocative test (McMurray, Thessaly, or Apley grind).",
+      "required_evidence": "Physical examination section recording localized joint line tenderness and positive McMurray sign.",
+      "is_mandatory": true
+    },
+    {
+      "id": "CRIT-KNEE-03",
+      "title": "Diagnostic Imaging Confirmation (MRI)",
+      "criterion_type": "DIAGNOSTIC",
+      "description": "Knee MRI demonstrating meniscal tear without isolated end-stage osteoarthritis.",
+      "required_evidence": "MRI report quote confirming tear of medial or lateral meniscus.",
+      "is_mandatory": true
+    },
+    {
+      "id": "CRIT-KNEE-04",
+      "title": "Conservative Management (>= 6 weeks) unless Acute Block",
+      "criterion_type": "CONSERVATIVE_THERAPY",
+      "description": "Trial of at least 6 weeks of conservative management including PT, NSAIDs, or corticosteroid injection, unless presenting with an acute locked knee.",
+      "required_evidence": "Records showing at least 6 weeks of structured physical therapy or non-operative interventions.",
+      "is_mandatory": true
+    }
+  ]
+}

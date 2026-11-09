@@ -1,0 +1,55 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: prior-auth-db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-priorauth}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-priorauthpass}
+      POSTGRES_DB: ${POSTGRES_DB:-prior_auth}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-priorauth} -d ${POSTGRES_DB:-prior_auth}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: prior-auth-api
+    command: uvicorn src.api.main:app --host 0.0.0.0 --port 8000
+    environment:
+      DATABASE_URL: sqlite:///prior_auth.db
+      POLICIES_DIR: data/policies
+      API_KEY: ${API_KEY:-dev-prior-auth-key}
+      REQUIRE_API_KEY: "false"
+      LLM_PROVIDER: ${LLM_PROVIDER:-deterministic}
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./data:/app/data
+      - ./eval/results:/app/eval/results
+
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: prior-auth-ui
+    command: streamlit run src/ui/app.py --server.port 8501 --server.address 0.0.0.0
+    environment:
+      API_BASE_URL: http://api:8000
+      API_KEY: ${API_KEY:-dev-prior-auth-key}
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+
+volumes:
+  postgres_data:

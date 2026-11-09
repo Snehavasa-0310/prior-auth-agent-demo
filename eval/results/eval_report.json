@@ -1,0 +1,90 @@
+{
+  "total_cases": 104,
+  "tricky_cases_count": 21,
+  "retrieval_recall_at_1": 1.0,
+  "retrieval_recall_at_3": 1.0,
+  "retrieval_mrr": 1.0,
+  "criterion_accuracy": 0.8774928774928775,
+  "criterion_macro_f1": 0.8140123395811764,
+  "criterion_per_class": {
+    "MET": {
+      "precision": 1.0,
+      "recall": 0.9292929292929293,
+      "f1": 0.9633507853403142,
+      "support": 198
+    },
+    "NOT_MET": {
+      "precision": 0.9473684210526315,
+      "recall": 0.7692307692307693,
+      "f1": 0.8490566037735849,
+      "support": 117
+    },
+    "INSUFFICIENT_INFO": {
+      "precision": 0.4722222222222222,
+      "recall": 0.9444444444444444,
+      "f1": 0.6296296296296297,
+      "support": 36
+    }
+  },
+  "confusion_matrix": {
+    "MET": {
+      "MET": 184,
+      "NOT_MET": 3,
+      "INSUFFICIENT_INFO": 11
+    },
+    "NOT_MET": {
+      "MET": 0,
+      "NOT_MET": 90,
+      "INSUFFICIENT_INFO": 27
+    },
+    "INSUFFICIENT_INFO": {
+      "MET": 0,
+      "NOT_MET": 2,
+      "INSUFFICIENT_INFO": 34
+    }
+  },
+  "overall_accuracy": 0.8557692307692307,
+  "critical_error_rate": 0.0,
+  "critical_error_count": 0,
+  "non_approvable_ground_truth_total": 56,
+  "exact_substring_faithfulness": 1.0,
+  "evidence_support_score": 1.0,
+  "hallucination_rate": 0.0,
+  "abstention_precision": 0.4722222222222222,
+  "abstention_recall": 0.9444444444444444,
+  "latency_p50_ms": 0.2969503402709961,
+  "latency_p95_ms": 0.49877166748046875,
+  "cost_per_case_usd": 0.00015,
+  "ablations": {
+    "Retrieval: Hybrid (Dense + BM25 + RRF)": {
+      "Recall@1": 1.0,
+      "Recall@3": 1.0,
+      "MRR": 1.0
+    },
+    "Retrieval: Dense Vector Only": {
+      "Recall@1": 1.0,
+      "Recall@3": 1.0,
+      "MRR": 1.0
+    },
+    "Retrieval: BM25 Keyword Only": {
+      "Recall@1": 1.0,
+      "Recall@3": 1.0,
+      "MRR": 1.0
+    },
+    "Retrieval: Hybrid + Cross-Encoder Reranker": {
+      "Recall@1": 1.0,
+      "Recall@3": 1.0,
+      "MRR": 1.0
+    },
+    "Architecture: State-Machine Agent (Ours)": {
+      "Overall Accuracy": 0.8557692307692307,
+      "Critical Error Rate": 0.0,
+      "Exact Substring Faithfulness": 1.0
+    },
+    "Architecture: Single-Pass Monolithic Baseline": {
+      "Overall Accuracy": 0.8365384615384616,
+      "Critical Error Rate": 0.30357142857142855,
+      "Exact Substring Faithfulness": 0.847692307692308
+    }
+  }
+}

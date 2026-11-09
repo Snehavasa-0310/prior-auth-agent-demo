@@ -1,0 +1,55 @@
+{
+  "id": "POL-CMS-L36593-SLEEP-STUDY",
+  "title": "Polysomnography and Sleep Testing",
+  "payer": "Medicare (CMS)",
+  "policy_type": "LCD",
+  "policy_number": "LCD L36593",
+  "procedure_name": "Polysomnography (Sleep Study), in-lab",
+  "cpt_codes": [
+    "95810",
+    "95811"
+  ],
+  "icd10_codes": [
+    "G47.33",
+    "G47.30"
+  ],
+  "effective_date": "2023-01-01",
+  "source_url": "https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdid=36593",
+  "summary": "Covers diagnostic in-laboratory polysomnography (CPT 95810) for suspected Obstructive Sleep Apnea (OSA) when comprehensive clinical evaluation demonstrates symptoms of excessive daytime sleepiness (Epworth Sleepiness Scale score >= 10 or loud snoring/witnessed apneas) and home sleep apnea testing is contraindicated or indeterminate.",
+  "sections": [
+    {
+      "title": "Coverage Indications",
+      "content": "In-lab attended polysomnography (CPT 95810) is covered for adult patients when ALL of the following criteria are met:\n1. Clinical evaluation by physician documenting symptoms of sleep-disordered breathing: habitual loud snoring, witnessed apneas, choking/gasping, or excessive daytime sleepiness.\n2. Validated daytime sleepiness assessment such as Epworth Sleepiness Scale (ESS) score >= 10.\n3. Indication for in-laboratory testing over unattended home sleep apnea test (HSAT), such as significant comorbid cardiorespiratory disease, neuromuscular weakness, hypoventilation risk, or prior inconclusive HSAT."
+    },
+    {
+      "title": "Non-Coverage",
+      "content": "Sleep testing is not covered for chronic uncomplicated insomnia or restless legs syndrome without sleep-related breathing disorder symptoms."
+    }
+  ],
+  "criteria": [
+    {
+      "id": "CRIT-SLEEP-01",
+      "title": "Documented Symptoms of Sleep-Disordered Breathing",
+      "criterion_type": "INCLUSION",
+      "description": "Patient exhibits documented symptoms of habitual loud snoring, nocturnal gasping/choking, or witnessed apneas.",
+      "required_evidence": "Clinical history recording snoring, witnessed apneas, or nocturnal waking with gasping.",
+      "is_mandatory": true
+    },
+    {
+      "id": "CRIT-SLEEP-02",
+      "title": "Excessive Daytime Sleepiness (Epworth Score >= 10)",
+      "criterion_type": "DIAGNOSTIC",
+      "description": "Epworth Sleepiness Scale (ESS) documented with score of 10 or greater.",
+      "required_evidence": "Clinical documentation of Epworth Sleepiness Scale score >= 10.",
+      "is_mandatory": true
+    },
+    {
+      "id": "CRIT-SLEEP-03",
+      "title": "Indication for In-Lab Polysomnography vs Home Sleep Test",
+      "criterion_type": "INCLUSION",
+      "description": "Presence of comorbid cardiopulmonary disease, morbid obesity with hypoventilation, neuromuscular disorder, or failed/inconclusive home sleep test.",
+      "required_evidence": "Note detailing reason why home sleep apnea testing is contraindicated or prior inconclusive test.",
+      "is_mandatory": true
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "POL-CMS-NCD100.1-BARIATRIC",
+  "title": "Bariatric Surgery for Morbid Obesity",
+  "payer": "Medicare (CMS)",
+  "policy_type": "NCD",
+  "policy_number": "NCD 100.1",
+  "procedure_name": "Laparoscopic Roux-en-Y Gastric Bypass / Sleeve Gastrectomy",
+  "cpt_codes": [
+    "43644",
+    "43775"
+  ],
+  "icd10_codes": [
+    "E66.01",
+    "Z68.41",
+    "Z68.42"
+  ],
+  "effective_date": "2023-01-01",
+  "source_url": "https://www.cms.gov/medicare-coverage-database/view/ncd.aspx?ncdid=57",
+  "summary": "Bariatric surgery is covered for individuals with BMI >= 35 with at least one major obesity-related comorbidity (e.g. type 2 diabetes, severe sleep apnea, refractory hypertension) or BMI >= 40, who have completed a structured non-surgical weight loss program and psychological evaluation.",
+  "sections": [
+    {
+      "title": "Indications",
+      "content": "Open and laparoscopic Roux-en-Y gastric bypass and sleeve gastrectomy (CPT 43644, 43775) are covered when:\n1. Body Mass Index (BMI) >= 35 kg/m2 with at least one severe obesity-related comorbid condition (Type 2 Diabetes, Obstructive Sleep Apnea, resistant hypertension), OR BMI >= 40 kg/m2 with or without comorbidities.\n2. Documentation of prior participation in a structured physician-supervised or multidisciplinary medical weight loss program for at least 6 consecutive months within the prior 2 years.\n3. Comprehensive multidisciplinary psychiatric/psychological clearance assessing patient stability and readiness for permanent dietary alterations."
+    },
+    {
+      "title": "Contraindications",
+      "content": "Untreated active substance abuse within 12 months, uncontrolled active psychiatric psychosis, or inability to adhere to lifelong nutritional supplementation."
+    }
+  ],
+  "criteria": [
+    {
+      "id": "CRIT-BARIATRIC-01",
+      "title": "BMI Criterion (BMI >= 40 or BMI >= 35 with Comorbidity)",
+      "criterion_type": "DIAGNOSTIC",
+      "description": "Documented BMI >= 40, or BMI >= 35 with at least one serious obesity-related comorbidity (T2DM, OSA, hypertension).",
+      "required_evidence": "Physical exam recording patient height, weight, and calculated BMI with comorbid conditions.",
+      "is_mandatory": true
+    },
+    {
+      "id": "CRIT-BARIATRIC-02",
+      "title": "Supervised Medical Weight Loss Program (>= 6 months)",
+      "criterion_type": "CONSERVATIVE_THERAPY",
+      "description": "Documented failure of at least 6 consecutive months of structured physician-supervised dietary and lifestyle modification program.",
+      "required_evidence": "Clinical notes detailing monthly visits, diet plans, and weight trajectory across 6 months.",
+      "is_mandatory": true
+    },
+    {
+      "id": "CRIT-BARIATRIC-03",
+      "title": "Psychological Evaluation and Clearance",
+      "criterion_type": "DIAGNOSTIC",
+      "description": "Formal pre-bariatric psychological evaluation confirming absence of active substance abuse and psychological readiness.",
+      "required_evidence": "Mental health evaluation report confirming clearance for bariatric surgery.",
+      "is_mandatory": true
+    }
+  ]
+}

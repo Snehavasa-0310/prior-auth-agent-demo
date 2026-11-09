@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Ruff Linter
+        run: |
+          ruff check .
+
+      - name: Run Mypy Type Checker
+        run: |
+          mypy src/ tests/ eval/
+
+      - name: Generate Dataset & Ingest Policies
+        run: |
+          python scripts/prepare_policies.py
+          python scripts/generate_synthetic_cases.py
+
+      - name: Run Test Suite & Evaluation Regression Gate
+        run: |
+          pytest tests/ -v --durations=10
+
+      - name: Run Full Evaluation Benchmark
+        run: |
+          python -m eval.runner

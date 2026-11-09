@@ -1,0 +1,45 @@
+{
+  "id": "POL-CMS-L33718-CPAP",
+  "title": "Continuous Positive Airway Pressure (CPAP) Therapy",
+  "payer": "Medicare (CMS)",
+  "policy_type": "LCD",
+  "policy_number": "LCD L33718",
+  "procedure_name": "Continuous Positive Airway Pressure Device",
+  "cpt_codes": [
+    "E0601"
+  ],
+  "icd10_codes": [
+    "G47.33"
+  ],
+  "effective_date": "2023-01-01",
+  "source_url": "https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdid=33718",
+  "summary": "Initial 12-week coverage of CPAP (HCPCS E0601) requires a diagnostic sleep test showing Apnea-Hypopnea Index (AHI) or Respiratory Disturbance Index (RDI) >= 15 events/hour, or AHI 5-14.9 events/hour with documented excessive daytime sleepiness, hypertension, or ischemic heart disease.",
+  "sections": [
+    {
+      "title": "Coverage Criteria for Initial 12-Week Period",
+      "content": "A single-level CPAP device (HCPCS E0601) is covered for adult patients with OSA when:\n1. The patient had a face-to-face clinical evaluation prior to the sleep study.\n2. The patient had a valid diagnostic sleep test (polysomnography or HSAT) showing:\n   a. AHI or RDI >= 15 events per hour; OR\n   b. AHI or RDI between 5 and 14.9 events per hour accompanied by documented excessive daytime sleepiness (ESS >= 10), impaired cognition, mood disorder, hypertension, or ischemic heart disease.\n3. The patient and caregiver have received education on the use and maintenance of CPAP."
+    },
+    {
+      "title": "Continued Coverage After 12 Weeks",
+      "content": "Continued coverage past 90 days requires documented compliance: usage >= 4 hours per night on 70% of nights during a consecutive 30-day period."
+    }
+  ],
+  "criteria": [
+    {
+      "id": "CRIT-CPAP-01",
+      "title": "Face-to-Face Clinical Evaluation",
+      "criterion_type": "INCLUSION",
+      "description": "Documented in-person face-to-face clinical evaluation with physician documenting sleep-related symptoms.",
+      "required_evidence": "Clinical encounter note with history of sleep disturbance and physical exam.",
+      "is_mandatory": true
+    },
+    {
+      "id": "CRIT-CPAP-02",
+      "title": "Diagnostic Sleep Study with AHI Criteria",
+      "criterion_type": "DIAGNOSTIC",
+      "description": "Sleep test documenting AHI/RDI >= 15 events/hr, OR AHI 5-14.9 events/hr with documented daytime sleepiness, hypertension, or cardiovascular comorbidity.",
+      "required_evidence": "Sleep study report stating exact AHI/RDI number and accompanying symptoms if AHI < 15.",
+      "is_mandatory": true
+    }
+  ]
+}

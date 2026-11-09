@@ -1,0 +1,65 @@
+{
+  "id": "POL-CMS-L34220-LUMBAR-MRI",
+  "title": "Magnetic Resonance Imaging (MRI) of the Lumbar Spine",
+  "payer": "Medicare (CMS)",
+  "policy_type": "LCD",
+  "policy_number": "LCD L34220",
+  "procedure_name": "Lumbar Spine MRI without Contrast",
+  "cpt_codes": [
+    "72148",
+    "72149"
+  ],
+  "icd10_codes": [
+    "M54.50",
+    "M54.16",
+    "M51.26",
+    "G83.4"
+  ],
+  "effective_date": "2023-01-01",
+  "source_url": "https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdid=34220",
+  "summary": "Covers non-emergent MRI of the lumbar spine after documented failure of at least 6 weeks of conservative management, or immediately in presence of red flag signs (cauda equina syndrome, progressive neurological deficit, active cancer history, infection).",
+  "sections": [
+    {
+      "title": "Indications and Limitations of Coverage",
+      "content": "Lumbar spine MRI (CPT 72148) is considered medically necessary when ANY of the following criteria are met:\n1. Red Flag Signs: Immediate MRI indicated for progressive neurological deficit (e.g. progressive motor weakness), suspicion of cauda equina syndrome (bowel/bladder dysfunction, saddle anesthesia), known active malignancy with new back pain, or clinical suspicion of spinal infection/osteomyelitis (fever, elevated ESR/CRP, IV drug use history).\n2. Radiculopathy with Failure of Conservative Therapy: Severe radiating radicular pain persisting after a minimum of 6 weeks of active documented conservative management (including physical therapy, structured home exercise, NSAIDs or neuropathic pain medication).\n3. Post-surgical evaluation: Persistent or recurrent symptoms following lumbar spine surgery within 12 months."
+    },
+    {
+      "title": "Exclusions and Non-Covered Scenarios",
+      "content": "MRI is not covered for uncomplicated acute low back pain (< 6 weeks duration) without radicular symptoms or neurological signs. Repeat MRI within 6 months without new neurological deficits or acute trauma is considered not medically necessary."
+    }
+  ],
+  "criteria": [
+    {
+      "id": "CRIT-LUMBAR-01",
+      "title": "Red Flag Signs or Neurological Emergency",
+      "criterion_type": "INCLUSION",
+      "description": "Documented acute red flag symptoms: cauda equina syndrome (bowel/bladder incontinence, saddle anesthesia), progressive motor weakness, or active malignancy.",
+      "required_evidence": "Physical exam or clinical documentation showing progressive motor deficit, bowel/bladder dysfunction, or oncologic history with localized bone pain.",
+      "is_mandatory": false
+    },
+    {
+      "id": "CRIT-LUMBAR-02",
+      "title": "Documented Radicular Symptoms",
+      "criterion_type": "INCLUSION",
+      "description": "Presence of true radicular symptoms radiating below the knee in a dermatomal distribution with positive straight leg raise or nerve root irritation signs.",
+      "required_evidence": "Documented radiating nerve root pain or positive neural tension sign (positive straight leg raise, dermatomal sensory loss, or reflex asymmetry).",
+      "is_mandatory": false
+    },
+    {
+      "id": "CRIT-LUMBAR-03",
+      "title": "Failure of Conservative Therapy (>= 6 weeks)",
+      "criterion_type": "CONSERVATIVE_THERAPY",
+      "description": "Trial of at least 6 consecutive weeks of conservative management consisting of formal physical therapy, prescribed medication (NSAIDs or oral steroids or neuropathic agents), and activity modification within the past 6 months.",
+      "required_evidence": "Clinical notes or therapy discharge summary specifying at least 6 weeks of PT/medication trial with dates and lack of functional improvement.",
+      "is_mandatory": true
+    },
+    {
+      "id": "CRIT-LUMBAR-04",
+      "title": "No Uncomplicated Non-Specific Back Pain Exclusion",
+      "criterion_type": "EXCLUSION",
+      "description": "Exclusion applies if pain is non-specific axial lower back pain of less than 6 weeks duration without neurologic involvement.",
+      "required_evidence": "Rule out non-specific axial back pain lacking duration or neurological findings.",
+      "is_mandatory": true
+    }
+  ]
+}

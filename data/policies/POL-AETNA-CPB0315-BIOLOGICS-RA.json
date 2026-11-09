@@ -1,0 +1,64 @@
+{
+  "id": "POL-AETNA-CPB0315-BIOLOGICS-RA",
+  "title": "Biologic DMARDs for Rheumatoid Arthritis",
+  "payer": "Aetna",
+  "policy_type": "COMMERCIAL_POLICY",
+  "policy_number": "CPB 0315",
+  "procedure_name": "Adalimumab (Humira) / Anti-TNF Biologic",
+  "cpt_codes": [
+    "J0135",
+    "Q5103"
+  ],
+  "icd10_codes": [
+    "M05.79",
+    "M06.0",
+    "M06.9"
+  ],
+  "effective_date": "2023-09-01",
+  "source_url": "https://www.aetna.com/cpb/medical/data/300_399/0315.html",
+  "summary": "Covers subcutaneous adalimumab for moderate to severe active Rheumatoid Arthritis following documented failure, intolerance, or contraindication to a 3-month trial of conventional synthetic DMARD (methotrexate, leflunomide, or sulfasalazine) and negative baseline tuberculosis screening.",
+  "sections": [
+    {
+      "title": "Indications for Biologic Therapy",
+      "content": "Adalimumab (CPT J0135) is considered medically necessary for adult patients with Rheumatoid Arthritis when:\n1. Diagnosis of moderate to severe active Rheumatoid Arthritis established by rheumatologist (based on swollen/tender joint count, elevated ESR/CRP, positive RF or anti-CCP antibodies).\n2. Inadequate response to or intolerance/contraindication to at least one conventional synthetic disease-modifying antirheumatic drug (csDMARD), typically oral methotrexate at target doses (>= 15 mg/week) for at least 12 weeks.\n3. Documentation of screening for latent tuberculosis infection (PPD skin test or IGRA / QuantiFERON Gold) with negative result prior to initiation."
+    },
+    {
+      "title": "Exclusions",
+      "content": "Concurrent use with other biologic DMARDs or targeted synthetic DMARDs (JAK inhibitors). Active serious systemic infection."
+    }
+  ],
+  "criteria": [
+    {
+      "id": "CRIT-RA-01",
+      "title": "Moderate to Severe Active Rheumatoid Arthritis",
+      "criterion_type": "INCLUSION",
+      "description": "Confirmed diagnosis of moderate to severe active RA with documented joint swelling, tenderness, and elevated inflammatory markers (ESR or CRP).",
+      "required_evidence": "Rheumatology note confirming active RA, swollen joint counts, and elevated CRP/ESR.",
+      "is_mandatory": true
+    },
+    {
+      "id": "CRIT-RA-02",
+      "title": "Failure or Intolerance to csDMARD (Methotrexate >= 12 weeks)",
+      "criterion_type": "CONSERVATIVE_THERAPY",
+      "description": "Documented trial of at least 12 weeks of methotrexate (or other csDMARD like leflunomide) at therapeutic dosage with inadequate disease suppression or documented hepatotoxicity/intolerance.",
+      "required_evidence": "Medication history recording >= 12 week trial of methotrexate with dates and lack of response or side effects.",
+      "is_mandatory": true
+    },
+    {
+      "id": "CRIT-RA-03",
+      "title": "Negative Latent Tuberculosis Screening",
+      "criterion_type": "DIAGNOSTIC",
+      "description": "Documented negative TB screening test (QuantiFERON-TB Gold or PPD) within the prior 12 months.",
+      "required_evidence": "Laboratory or clinical note citing negative QuantiFERON Gold or negative PPD test.",
+      "is_mandatory": true
+    },
+    {
+      "id": "CRIT-RA-04",
+      "title": "Absence of Active Serious Infection or Biologic Duplication",
+      "criterion_type": "EXCLUSION",
+      "description": "No active untreated serious infection and no concurrent administration of another biologic or JAK inhibitor.",
+      "required_evidence": "Review of systems confirming absence of active infection and singular biologic regimen.",
+      "is_mandatory": true
+    }
+  ]
+}

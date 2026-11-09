@@ -1,0 +1,27 @@
+# Python & Environment
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+
+# Testing & Linters
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Local databases & secrets
+*.db
+*.sqlite3
+.env
+
+# Build & packaging
+dist/
+build/
+*.egg-info/
+.DS_Store
